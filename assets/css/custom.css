@@ -1,11 +1,9 @@
-nav li a {
-  display: block;
-  font-family: "Nunito", Arial, sans-serif;
+.navbar-nav > li > a {
   text-transform: uppercase;
+  line-height: 80px;
 }
 
 li a {
-  top: 28;
   font-weight: bold;
   font-size: 1.6em;
   font-family: "Nunito", Arial, sans-serif;
@@ -16,15 +14,14 @@ li a {
 }
 
 .login img {
+  /* margin-top: -5px; */
+  vertical-align: -5;
   height: 1.5em;
-  display: block;
-  float: right;
-  margin-top: -12.5px;
   margin-left: 5px;
 }
 
 .navbar-inverse {
-  padding-bottom: 23px;
+  /* padding-bottom: 23px; */
   background-color: #f3faea;
   color: #333;
 }
@@ -46,4 +43,10 @@ li a {
 
 body {
     font-family: "Nunito", Arial, sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-nav > li > a {
+    line-height: 28px;
+  }
 }
