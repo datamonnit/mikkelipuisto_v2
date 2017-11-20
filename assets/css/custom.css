@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 .navbar-nav > li > a {
-=======
-nav li a {
-  display: block;
-  font-family: "Nunito", Arial, sans-serif;
-  font-weight: bold;
->>>>>>> 2837eb6fc0c1ae6b27621fafce6f913a772183f9
   text-transform: uppercase;
   line-height: 80px;
 }
