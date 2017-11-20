@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   </head>
   <body>
   <nav class="navbar navbar-inverse">
