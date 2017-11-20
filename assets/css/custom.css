@@ -1,29 +1,49 @@
 nav li a {
   display: block;
+  font-family: "Nunito", Arial, sans-serif;
+  text-transform: uppercase;
 }
 
 li a {
   top: 28;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.6em;
+  font-family: "Nunito", Arial, sans-serif;
 }
 
 .login a {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 
 .login img {
   height: 1.5em;
   display: block;
   float: right;
-  margin-top: -9.5px;
+  margin-top: -12.5px;
   margin-left: 5px;
 }
 
 .navbar-inverse {
   padding-bottom: 23px;
+  background-color: #f3faea;
+  color: #333;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #76b82a;
+    font-family: "Nunito", Arial, sans-serif;
+}
+
+.alert-success {
+    background-color: #76b82a;
+    border-color: #76b82a;
+    color: #ffffff;
 }
 
 .yt h3 {
   font-weight: bold;
+}
+
+body {
+    font-family: "Nunito", Arial, sans-serif;
 }

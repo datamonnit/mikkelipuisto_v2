@@ -1,21 +1,13 @@
 <html>
   <head>
   <title>Mikkelipuisto</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
+  <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
   </head>
   <body>
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
-       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <div class=" main_logo">
            <a href='<?php echo base_url(); ?>' class="logo_li">
              <span class='span-logo'>
@@ -24,22 +16,22 @@
            </a>
          </div>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
+      <div id="navbar">
         <ul class="nav navbar-nav navbar-left">
-          <li><a href="<?php echo base_url(); ?>">Etusivu</a></li>
-          <li><a href="<?php echo base_url(); ?>media">Media</a></li>
-          <li><a href="<?php echo base_url(); ?>yhteystiedot">Yhteystiedot</a></li>
+          <li><a href="<?php echo base_url(); ?>">ETUSIVU</a></li>
+          <li><a href="<?php echo base_url(); ?>media">MEDIA</a></li>
+          <li><a href="<?php echo base_url(); ?>yhteystiedot">YHTEYSTIEDOT</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <?php if($this->session->userdata('logged_in')) : ?>
             <li class="login">
-              <a href="<?php echo base_url(); ?>kirjaudu">Kirjaudu ulos
+              <a href="<?php echo base_url(); ?>kirjaudu">KIRJAUDU ULOS
                 <img src="<?php echo base_url(); ?>assets/images/lock.png" alt="">
               </a>
             </li>
             <?php else : ?>
             <li class="login">
-              <a href="<?php echo base_url(); ?>kirjaudu">Kirjaudu sisään
+              <a href="<?php echo base_url(); ?>kirjaudu">KIRJAUDU SISÄÄN
                 <img src="<?php echo base_url(); ?>assets/images/lock.png" alt="">
               </a>
             </li>
