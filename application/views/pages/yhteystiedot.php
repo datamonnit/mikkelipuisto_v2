@@ -22,7 +22,6 @@
 <h3 class="yt">Puhelin puistoon</h3>
 <h4>(Kesäkaudella)</h4>
 <h4>0440 300 170</h4>
-<h4>mikkelipuisto@mikkelipuisto.fi</h4>
 <hr>
 
 <h3 class="yt">Posti- ja käyntiosoite</h3>
