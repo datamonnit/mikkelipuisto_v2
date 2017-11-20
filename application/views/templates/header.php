@@ -9,9 +9,9 @@
     <div class="container">
       <div class="navbar-header">
         <div class=" main_logo">
-           <a href='etusivu' class="logo_li">
+           <a href='<?php echo base_url(); ?>' class="logo_li">
              <span class='span-logo'>
-                <img style="height: 80px; margin-top: 4px" img src='<?php echo base_url(); ?>assets/images/puisto_logo.png'/>
+                <img style="height: 80px; margin-top: 4px" src='<?php echo base_url(); ?>assets/images/puisto_logo.png'/>
              </span>
            </a>
          </div>
@@ -23,9 +23,19 @@
           <li><a href="<?php echo base_url(); ?>yhteystiedot">YHTEYSTIEDOT</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li class="login"><a href="<?php echo base_url(); ?>kirjaudu">KIRJAUDU SISÄÄN
-              <img src="<?php echo base_url(); ?>assets/images/lock.png" alt="">
-            </a></li>
+          <?php if($this->session->userdata('logged_in')) : ?>
+            <li class="login">
+              <a href="<?php echo base_url(); ?>kirjaudu">KIRJAUDU ULOS
+                <img src="<?php echo base_url(); ?>assets/images/lock.png" alt="">
+              </a>
+            </li>
+            <?php else : ?>
+            <li class="login">
+              <a href="<?php echo base_url(); ?>kirjaudu">KIRJAUDU SISÄÄN
+                <img src="<?php echo base_url(); ?>assets/images/lock.png" alt="">
+              </a>
+            </li>
+          <?php endif; ?>
         </ul>
       </div>
     </div>
@@ -38,4 +48,7 @@
     <?php endif; ?>
     <?php if($this->session->flashdata('login_failed')): ?>
       <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
+    <?php endif; ?>
+    <?php if($this->session->flashdata('user_loggedout')): ?>
+      <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
     <?php endif; ?>
