@@ -32,9 +32,8 @@
 <hr>
 
 <h4>Mikkelipuiston yleisten alueiden hoidosta ja toiminnasta vastaa Mikkelin kaupunki.</h4>
-<h3 class="yt">Viljo Muuronen</h3>
-<h4>Kaupunginpuutarhuri, Mikkelin kaupunki</h4>
+<h3 class="yt">Marko Vuorinen</h3>
+<h4>Kaupunginpuutarhuri</h4>
 <h4>044 794 3230</h4>
-<h4>viljo.muuronen@mikkeli.fi</h4>
 <br>
 <hr>
