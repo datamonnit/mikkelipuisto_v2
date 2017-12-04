@@ -86,11 +86,10 @@ body {
     max-width: 1200px;*/
 
       position: relative;
-      background-color: #fefefe;
       margin: auto;
-      padding: 0;
       width: 90%;
-      max-width: 1400px;
+      padding: 0 0 900px 0;
+      /*max-width: 1400px;*/
 
   }
 
@@ -179,4 +178,12 @@ body {
   .hover-shadow:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
   }
+
+  .fixed-bar {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+  z-index: 2;
+}
 }
