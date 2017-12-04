@@ -1,17 +1,23 @@
 <div class="row">
   <div class="column">
-    <img src="assets/images/test.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+    <img src="uploads/thumbnails/test_tn.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
   </div>
   <div class="column">
-    <img src="test1.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+    <img src="uploads/thumbnails/test1_tn.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
   </div>
   <div class="column">
-    <img src="test3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+    <img src="uploads/thumbnails/test2_tn.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
   </div>
   <div class="column">
-    <img src="test4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+    <img src="uploads/thumbnails/test4_tn.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
   </div>
 </div>
+<!--ul id="carousel" class="elastislide-list">
+  <li><a href="#"><img class="demo" src="uploads/thumbnails/test_tn.png" alt="image01" onclick="openModal();currentSlide(1)"/></a></li>
+  <li><a href="#"><img class="demo" src="uploads/thumbnails/test1_tn.png" alt="image02" onclick="openModal();currentSlide(2)" /></a></li>
+  <li><a href="#"><img class="demo" src="uploads/thumbnails/test2_tn.png" alt="image03" onclick="openModal();currentSlide(3)"/></a></li>
+  <li><a href="#"><img class="demo" src="uploads/thumbnails/test4_tn.png" alt="image03" onclick="openModal();currentSlide(4)"/></a></li>
+</ul-->
 
 <div id="myModal" class="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
@@ -24,17 +30,17 @@
 
     <div class="mySlides">
       <div class="numbertext">2 / 4</div>
-      <img src="test1.jpg" style="width:100%">
+      <img src="assets/images/test1.jpg" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">3 / 4</div>
-      <img src="test2.jpg" style="width:100%">
+      <img src="assets/images/test2.jpg" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">4 / 4</div>
-      <img src="test3.jpg" style="width:100%">
+      <img src="assets/images/test4.jpg" style="width:100%">
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -44,20 +50,16 @@
       <p id="caption"></p>
     </div>
 
-    <div class="column">
-      <img class="demo" src="assets/images/test.jpg" onclick="currentSlide(1)" alt="Nature">
-    </div>
+    <div class="thumbs">
+        <ul id="carousel" class="elastislide-list">
+        	<li><a href="#"><img class="demo" src="uploads/thumbnails/test_tn.png" alt="image01" onclick="openModal();currentSlide(1)"/></a></li>
+        	<li><a href="#"><img class="demo" src="uploads/thumbnails/test1_tn.png" alt="image02" onclick="openModal();currentSlide(2)" /></a></li>
+        	<li><a href="#"><img class="demo" src="uploads/thumbnails/test2_tn.png" alt="image03" onclick="openModal();currentSlide(3)"/></a></li>
+          <li><a href="#"><img class="demo" src="uploads/thumbnails/test4_tn.png" alt="image03" onclick="openModal();currentSlide(4)"/></a></li>
+        </ul>
+      </div>
+      
 
-    <div class="column">
-      <img class="demo" src="test1.jpg" onclick="currentSlide(2)" alt="Trolltunga">
-    </div>
-
-    <div class="column">
-      <img class="demo" src="test2.jpg" onclick="currentSlide(3)" alt="Mountains">
-    </div>
-
-    <div class="column">
-      <img class="demo" src="test3.jpg" onclick="currentSlide(4)" alt="Lights">
-    </div>
   </div>
+</div>
 </div>

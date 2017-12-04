@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="<?php echo base_url(); ?>assets/js/modernizr.custom.17475.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/elastislide.css" />
   </head>
   <body>
   <nav class="navbar navbar-inverse">
