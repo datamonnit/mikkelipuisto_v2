@@ -13,8 +13,8 @@
     <script src="<?php echo base_url(); ?>assets/js/scriptii.js"></script>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquerypp.custom.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.elastislide.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquerypp.custom.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.elastislide.js"></script>
 
       <script type="text/javascript">
 

@@ -19,22 +19,22 @@
 
     <div class="mySlides">
       <div class="numbertext">1 / 4</div>
-      <img src="assets/images/test.jpg" style="width:100%">
+      <img src="uploads/images/test.jpg" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">2 / 4</div>
-      <img src="assets/images/test1.jpg" style="width:100%">
+      <img src="uploads/images/test1.jpg" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">3 / 4</div>
-      <img src="assets/images/test2.jpg" style="width:100%">
+      <img src="uploads/images/test2.jpg" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext">4 / 4</div>
-      <img src="assets/images/test4.jpg" style="width:100%">
+      <img src="uploads/images/test4.jpg" style="width:100%">
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

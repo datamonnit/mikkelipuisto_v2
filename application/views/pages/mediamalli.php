@@ -20,7 +20,7 @@
     <div class="col-md-5">
         <h4>Palvelurakennus</h4>
         <p>Palvelurakennus Greenerin rakentaminen.</p>
-        <a class="btn btn-primary" href="more">Katso lisää<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-primary" href="media/category">Katso lisää<span class="glyphicon glyphicon-chevron-right"></span></a>
         <br></br>
         <?php if($this->session->userdata('logged_in')) : ?>
         <a class="btn btn-success" href="more">Lisää kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -40,7 +40,7 @@
     <div class="col-md-5">
         <h4>Puutarhapuisto</h4>
         <p>Kuvia puutarhapuistosta.</p>
-        <a class="btn btn-primary" href="more">Katso lisää<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-primary" href="media/category">Katso lisää<span class="glyphicon glyphicon-chevron-right"></span></a>
         <br></br>
         <?php if($this->session->userdata('logged_in')) : ?>
         <a class="btn btn-success" href="more">Lisää kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
