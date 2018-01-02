@@ -68,7 +68,7 @@ body {
   .modal {
     /*background-co   lor: black;*/
     display: none;
-    position: fixed;
+    position: relative;
     z-index: 1;
     /*padding-top: 100px;*/
     left: 0;
@@ -155,9 +155,9 @@ body {
 
   .caption-container {
     text-align: center;
-    background-color: black;
-    padding: 2px 16px;
-    color: white;
+    background-color: white;
+    padding: 3px 16px;
+    color: black;
   }
 
   img.demo {
@@ -184,4 +184,9 @@ body {
 	bottom: 0;
   z-index: 2;
 }
+
+p {
+  margin: 0 0 0;
+  }
+
 }

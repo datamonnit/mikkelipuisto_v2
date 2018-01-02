@@ -19,7 +19,8 @@
       <script type="text/javascript">
 
       $( '#carousel' ).elastislide();
-
+      openModal();
+      currentSlide(1);
     </script>
 
   </body>

@@ -4,9 +4,10 @@
     <div class="caption-container">
       <p id="caption"></p>
     </div>
+    <?php if($this->session->userdata('logged_in')) : ?>
     <?php foreach ($images as $image): ?>
     <div class="mySlides">
-            <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width:100%">
+            <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width:100%"><p>Poista</p>>
     </div>
     <?php endforeach; ?>
 
