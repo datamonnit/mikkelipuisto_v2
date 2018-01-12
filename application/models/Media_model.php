@@ -1,27 +1,6 @@
 <?php
 class Media_model extends CI_Model {
 
-  public function get_categories(){
-    $query = $this->db->get('categories');
-    return $query->result();
-  }
-
-  public function get_category_intro_images() {
-    $this->db->select('name');
-    $query = $this->db->get('images');
-    return $query->result();
-  }
-
-  public function get_images($category_id){
-
-    $this->db->select('name, text');
-    $this->db->where('category_id', $category_id);
-    $query = $this->db->get('images');
-    $result = $query->result();
-
-    return $result;
-  }
-
   // Lisää metodi joka tallentaa kuvan lisäys -lomakkeen tiedot kantaan
 
   public function upload_image($image) {
@@ -35,6 +14,22 @@ class Media_model extends CI_Model {
     );
 
     return $this->db->insert('images', $data);
+  }
+
+    public function delete_image($id) {
+     $image_file_name = $this->db->select('name')->get_where('images', array('id' => $id))->row()->name;
+     $cwd = getcwd(); // save the current working Directory
+     $image_file_path = $cwd."\\uploads\\images\\";
+     chdir($image_file_path);
+     unlink($image_file_name);
+     $image_file_path = $cwd."\\uploads\\thumbnails\\";
+     chdir($image_file_path);
+     unlink($image_file_name);
+
+     chdir($cwd); // restore the previous working Directory
+     $this->db->where('id', $id);
+     $this->db->delete('images');
+     return true;
   }
 
 }

@@ -9,7 +9,6 @@
             <?php echo form_open_multipart('upload/do_upload');?>
               <input type="file" name="userfile" size="20" />
               <br>
-              <p>Lisää kategoria:</p>
             </div>
               <input type="text" name="category_id" class="form-control" placeholder="Nimi" required autofocus>
             <br>

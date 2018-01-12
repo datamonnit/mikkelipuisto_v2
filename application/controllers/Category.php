@@ -1,6 +1,6 @@
 <?php
 
-class Upload extends CI_Controller {
+class Category extends CI_Controller {
 
     public function __construct()
     {
@@ -8,23 +8,87 @@ class Upload extends CI_Controller {
       $this->load->helper(array('form', 'url'));
     }
 
+    public function delete_cat($id) {
+
+      if (!$this->session->userdata('logged_in')) {
+        redirect('users/login');
+      }
+
+      echo $this->Category_model->delete_category($id);
+      // Set Message
+      $this->session->set_flashdata('category_deleted', 'Kategoria on poistettu');
+      // redirect('media');
+      }
+
+    public function lisaakategoria() {
+      $data['title'] = 'Lisaa kategoria';
+
+      $this->load->view('templates/header');
+      $this->load->view('media/lisaakategoria',$data);
+      $this->load->view('templates/footer');
+    }
+
+    public function category($category_id) {
+      $data['title'] = 'Kategoria';
+      $data['images'] = $this->Category_model->get_images($category_id);
+
+      $this->load->view('templates/header');
+      $this->load->view('media/category',$data);
+      $this->load->view('templates/footer');
+
+    }
+
+
+    public function create(){
+  // Check login
+    if (!$this->session->userdata('logged_in')) {
+      redirect('users/login');
+    }
+
+    $data['title'] = 'Uusi Kategoria';
+
+    $this->form_validation->set_rules('name', 'Name', 'required');
+
+    if ($this->form_validation->run() == FALSE){
+      $this->load->view('templates/header');
+      $this->load->view('pages/'.$page, $data);
+      $this->load->view('templates/footer');
+    } else {
+      $this->Category_model->create_category();
+
+      // Set Message
+      $this->session->set_flashdata('category_created', 'Uusi kategoria on luotu');
+      redirect('media');
+    }
+  }
+
     public function index()
     {
-      $this->load->view('media/lisaakuva', array('error' => ' ' ));
+      $this->load->view('media/lisaakategoria', array('error' => ' ' ));
     }
 
     public function do_upload()
     {
 
-      $this->form_validation->set_rules('category_id', 'Category', 'required');
-      $this->form_validation->set_rules('text', 'Text', 'required');
+      $this->form_validation->set_rules('name', 'kategorian_nimi', 'required');
+      $this->form_validation->set_rules('text', 'kategorian_kuvaus', 'required');
 
       if ($this->form_validation->run() === FALSE) {
         $this->load->view('templates/header');
-        $this->load->view('pages/'.$page, $data);
+        $this->load->view('media/lisaakategoria');
         $this->load->view('templates/footer');
 
         } else {
+
+          $data = array(
+            'name' => $this->input->post('name'),
+            'text' => $this->input->post('text')
+          );
+
+          if ( !$this->Category_model->create_category($data))  {
+              echo "Error";
+          }
+
 
           $config['upload_path']          = "C:\\xampp\\htdocs\\mikkelipuisto_uusi\\uploads\\images";
           $config['allowed_types']        = 'gif|jpg|png';
@@ -100,7 +164,7 @@ class Upload extends CI_Controller {
             $this->session->set_flashdata('upload_success', 'Kuva on ladattu');
             // $this->load->view('media/index');
             // redirect('http://localhost/mikkelipuisto_uusi');
-          }
-        }
-      }
+         }
+       }
+    }
 }

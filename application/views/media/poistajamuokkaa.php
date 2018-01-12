@@ -4,10 +4,13 @@
     <div class="caption-container">
       <p id="caption"></p>
     </div>
-    <?php if($this->session->userdata('logged_in')) : ?>
+
     <?php foreach ($images as $image): ?>
     <div class="mySlides">
-            <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width:100%"><p>Poista</p>>
+      <?php echo form_open('media/delete/'.$image->id); ?>
+        <input type="submit" value="Poista" class="btn btn-danger" onclick="return confirm('Haluatko varmasti poistaa kuvan?')">
+      </form>
+      <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width:100%">
     </div>
     <?php endforeach; ?>
 
