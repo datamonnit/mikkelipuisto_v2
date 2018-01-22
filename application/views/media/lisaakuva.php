@@ -7,7 +7,7 @@
             <div class="form-group">
             <h1 class="text-center">Lataa kuvia</h1>
             <?php echo form_open_multipart('upload/do_upload');?>
-              <input type="file" name="userfile" size="20" />
+              <input type="file" name="userfile[]" size="20" multiple />
               <br>
             </div>
               <input type="text" name="category_id" class="form-control" placeholder="Nimi" required autofocus>

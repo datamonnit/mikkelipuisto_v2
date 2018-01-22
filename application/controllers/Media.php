@@ -4,7 +4,7 @@
     public function index() {
       $data['title'] = 'Media';
       $data['categories'] = $this->Category_model->get_categories();
-      $data['images'] = $this->Category_model->get_category_intro_images('name');
+      $data['images'] = $this->Category_model->get_category_intro_images();
 
       $this->load->view('templates/header');
       $this->load->view('media/view',$data);
@@ -41,4 +41,27 @@
 
     }
 
+    public function edit_image_description($desc, $image_id){
+      // Ajax-kutusun käynnistäminen, mukana data
+    $data = array(
+    'username' => $this->input->post('name'),
+    'pwd'=>$this->input->post('pwd')
+    );
+
+      // Viewiessä js-functio, joka käynnistetään Enter-painalluksella?
+
+      // Modeliin metodi, joka tallentaa tiedot tietokantaan
+      // UPDATE-komento
+
+      // Controlleri lähettää selaimelle tiedon, että tallennus onnistui
+    }
+
+    function handleKeyPress(e){
+    var key=e.keyCode || e.which;
+    if (key==13){
+       searching();
+
+     }
+
+    }
 }

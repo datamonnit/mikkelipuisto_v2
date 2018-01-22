@@ -15,11 +15,15 @@ class Category_model extends CI_Model {
   public function create_category($data) {
     $this->db->set('name',$data['name']);
     $this->db->set('text',$data['text']);
-   return $this->db->insert('categories', $data);
+    if ($this->db->insert('categories', $data)){
+      return $this->db->insert_id();
+    } else {
+      return false;
+    }
   }
 
   public function get_category_intro_images() {
-    $this->db->select('name');
+    $this->db->select('name, category_id');
     $query = $this->db->get('images');
     return $query->result();
   }

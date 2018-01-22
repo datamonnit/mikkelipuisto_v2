@@ -8,7 +8,7 @@
           <h1 class="text-center">Lisää kategoria ja lataa minimissään kaksi kuvaa</h1>
           <?php echo form_open_multipart('category/do_upload');?>
             <div class="form-group">
-              <input type="file" name="userfile" size="20" /><br>
+              <input type="file" name="userfile[]" size="20" multiple /><br>
             </div>
             <div class="form-group">
               <input type="text" name="name" class="form-control" placeholder="Nimi" required autofocus><br>

@@ -2,7 +2,7 @@
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="caption-container">
-      <p id="caption"></p>
+      <p contenteditable="true" id="caption" onkeypress="handleKeyPress(event)"></p>
     </div>
 
     <?php foreach ($images as $image): ?>

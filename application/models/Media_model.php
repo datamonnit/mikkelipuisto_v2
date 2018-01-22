@@ -16,6 +16,17 @@ class Media_model extends CI_Model {
     return $this->db->insert('images', $data);
   }
 
+  public function upload_new_category_image($image_name, $image_category) {
+    $data = array(
+      'name' => $image_name,
+      'category_id' => $image_category,
+      'text' => '',
+      'user_id' => $this->session->userdata('user_id')
+    );
+
+    return $this->db->insert('images', $data);
+  }
+
     public function delete_image($id) {
      $image_file_name = $this->db->select('name')->get_where('images', array('id' => $id))->row()->name;
      $cwd = getcwd(); // save the current working Directory
@@ -30,6 +41,15 @@ class Media_model extends CI_Model {
      $this->db->where('id', $id);
      $this->db->delete('images');
      return true;
+  }
+
+  public function edit_image_description($desc, $image_id) {
+    $data = array(
+      'text' => $this->input->post('text'),
+      'user_id' => $this->session->userdata('user_id')
+    );
+
+    return $this->db->insert('images', $data);
   }
 
 }
