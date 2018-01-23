@@ -27,3 +27,12 @@
     <?php endforeach; ?>
   </ul>
 </div>
+
+<script type="text/javascript">
+function handleKeyPress(e){
+  var key=e.keyCode || e.which;
+  if (key==13){
+     alert('Painoit enter');
+   }
+}
+</script>

@@ -56,12 +56,5 @@
       // Controlleri lähettää selaimelle tiedon, että tallennus onnistui
     }
 
-    function handleKeyPress(e){
-    var key=e.keyCode || e.which;
-    if (key==13){
-       searching();
 
-     }
-
-    }
 }
