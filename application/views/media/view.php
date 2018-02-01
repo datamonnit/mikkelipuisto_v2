@@ -11,7 +11,12 @@
     </div>
 </div>
 
-<h2>KUVAT</h2>
+<h2>KUVAT
+<?php if($this->session->userdata('logged_in')) : ?>
+        <a class="btn btn-success" href="category/lisaakategoria/">Lisää uusi kategoria<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-success" href="media/lisaakuva/">Lataa kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
+<?php endif; ?>
+</h2>
 <hr>
 <?php foreach ($categories as $category): ?>
 <div class="row">
@@ -42,7 +47,37 @@
 <hr>
 <?php endforeach; ?>
 
-<h2>VIDEOT</h2>
+<h2>VIDEOT
+  <?php if($this->session->userdata('logged_in')) : ?>
+          <a class="btn btn-success" href="media/lisaavideokategoria/">Lisää uusi kategoria<span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a class="btn btn-success" href="media/lisaavideo/">Lisää videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
+  <?php endif; ?></h2>
 <hr>
+<?php foreach ($video_categories as $video_category): ?>
 <div class="row">
     <div class="col-md-7">
+      <?php if (count($videos) > 0 ): ?>
+        <iframe style="float: left; width: 319px; height:218px; margin-right: 1%; margin-bottom: 0.5em;" src="https://www.youtube.com/embed/lTZlHhvU3U8"></iframe>
+        <iframe style="float: left; width: 319px; height:218px; margin-right: 1%; margin-bottom: 0.5em;" src="https://www.youtube.com/embed/IgO9rGlAAzc"></iframe>
+      <?php else: ?>
+        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+      <?php endif; ?>
+    </div>
+    <div class="col-md-5">
+             <?php if($this->session->userdata('logged_in')) : ?>
+               <?php echo form_open('category/delete_video_cat/'.$video_category->id); ?>
+                <input type="submit" value="Poista kategoria" class="btn btn-danger" onclick="return confirm('Haluatko varmasti poistaa kategorian?')">
+        </form>
+        <?php endif; ?>
+            <h4><?php echo $video_category->name; ?></h4>
+            <p><?php echo $video_category->text; ?></p>
+            <a class="btn btn-primary" href="category/category/<?php echo $video_category->id; ?>">Katso lisää<span class="glyphicon glyphicon-chevron-right"></span></a>
+          <br></br>
+        <?php if($this->session->userdata('logged_in')) : ?>
+          <a class="btn btn-warning" href="media/poistajamuokkaa/<?php echo $video_category->id; ?>">Muokkaa tai poista videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <?php endif; ?>
+    </div>
+</div>
+<hr>
+<?php endforeach; ?>

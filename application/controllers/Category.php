@@ -95,10 +95,10 @@ class Category extends CI_Controller {
 
         $number_of_files_uploaded = count($_FILES['userfile']['name']);
 
-          // Upload
+        // Upload
           $this->load->library('upload');
 
-          // Resize
+            // Resize
           $this->load->library('image_lib');
           $resize_config['image_library'] = 'gd2';
           $resize_config['maintain_ratio'] = TRUE;

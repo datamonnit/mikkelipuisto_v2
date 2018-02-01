@@ -5,6 +5,8 @@
       $data['title'] = 'Media';
       $data['categories'] = $this->Category_model->get_categories();
       $data['images'] = $this->Category_model->get_category_intro_images();
+      $data['video_categories'] = $this->Video_Category_model->get_video_categories();
+
 
       $this->load->view('templates/header');
       $this->load->view('media/view',$data);

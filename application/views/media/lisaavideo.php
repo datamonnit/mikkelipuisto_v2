@@ -1,0 +1,31 @@
+<?php if($this->session->userdata('logged_in')) : ?>
+  <?php echo validation_errors(); ?>
+  <?php if (isset($error)) echo $error;?>
+
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="form-group">
+          <h1 class="text-center">Lisää videoita</h1>
+            <br>
+
+          </div>
+            <p>Valitse kategoria:</p>
+          <div>
+        <select name="video_category_id">
+          <?php foreach ($video_categories as $video_category): ?>
+          <option value="<?php echo $video_category->id; ?>"><?php echo $video_category->name; ?></option>
+          <?php endforeach; ?>
+        </select>
+        <div>
+      <br>
+          <div class="form-group">
+            <input type="text" name="text" class="form-control" placeholder="Lisää videon Youtube-linkki" required autofocus>
+          </div>
+          <button type="submit" value="value" class="btn btn-primary btn-block">Seuraava</button>
+        </div>
+      </div>
+    <?php echo form_close(); ?>
+
+  <?php endif; ?>
+  <br>
+  <hr>
