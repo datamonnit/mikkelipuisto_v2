@@ -13,6 +13,7 @@
 
     public function lisaakuva() {
       $data['title'] = 'Lisaa kuva';
+      $data['categories'] = $this->Category_model->get_categories();
 
       $this->load->view('templates/header');
       $this->load->view('media/lisaakuva',$data);
@@ -41,12 +42,24 @@
 
     }
 
-    public function edit_image_description($desc, $image_id){
+    public function edit_image_description(){
       // Ajax-kutusun käynnistäminen, mukana data
-    $data = array(
-    'username' => $this->input->post('name'),
-    'pwd'=>$this->input->post('pwd')
-    );
+      $data = array(
+        'desc' => $this->input->post('desc'),
+        'id' => $this->input->post('id')
+      );
+
+      // echo json_encode($data);
+    if ($this->Media_model->edit_image_description($data)) {
+        $kissa = array(
+          'message' => 'Jippii!'
+        );
+    } else {
+      $kissa = array(
+        'message' => 'Voi ei!!'
+      );
+    }
+    echo json_encode($kissa);
 
       // Viewiessä js-functio, joka käynnistetään Enter-painalluksella?
 

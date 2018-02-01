@@ -9,11 +9,19 @@
             <?php echo form_open_multipart('upload/do_upload');?>
               <input type="file" name="userfile[]" size="20" multiple />
               <br>
+
             </div>
-              <input type="text" name="category_id" class="form-control" placeholder="Nimi" required autofocus>
-            <br>
+              <p>Valitse kategoria:</p>
+            <div>
+          <select name="category_id">
+            <?php foreach ($categories as $category): ?>
+            <option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
+            <?php endforeach; ?>
+          </select>
+          <div>
+        <br>
             <div class="form-group">
-              <input type="text" name="text" class="form-control" placeholder="Kuvaus" required autofocus>
+              <input type="text" name="text" class="form-control" placeholder="Kuvaus kaikille kuville" required autofocus>
             </div>
             <button type="submit" value="upload" class="btn btn-primary btn-block">Seuraava</button>
           </div>

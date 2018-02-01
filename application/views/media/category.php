@@ -19,7 +19,7 @@
   <ul id="carousel" class="elastislide-list">
 
     <?php foreach ($images as $image): ?>
-      <li><a href="#"><img class="demo" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $image->name; ?>" alt="<?php echo $image->text; ?>" onclick="openModal();currentSlide(<?php echo $i++; ?>)"/></a></li>
+      <li><a href="#"><img class="demo" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $image->name; ?>" data-id="<?php echo $image->id; ?>" alt="<?php echo $image->text; ?>" onclick="openModal();currentSlide(<?php echo $i++; ?>)"/></a></li>
     <?php endforeach; ?>
   </ul>
 </div>

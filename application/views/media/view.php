@@ -4,6 +4,7 @@
               <small><b>Kuvat ja videot Mikkelipuistosta eri aiheittain.</b></small>
               <?php if($this->session->userdata('logged_in')) : ?>
                       <a class="btn btn-success" href="category/lisaakategoria/">Lisää uusi kategoria<span class="glyphicon glyphicon-chevron-right"></span></a>
+                      <a class="btn btn-success" href="media/lisaakuva/">Lataa kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
               <?php endif; ?>
               <hr>
         </h1>
@@ -34,7 +35,6 @@
           <a class="btn btn-primary" href="category/category/<?php echo $category->id; ?>">Katso lisää<span class="glyphicon glyphicon-chevron-right"></span></a>
           <br></br>
         <?php if($this->session->userdata('logged_in')) : ?>
-          <a class="btn btn-success" href="media/lisaakuva/">Lataa kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
           <a class="btn btn-warning" href="media/poistajamuokkaa/<?php echo $category->id; ?>">Muokkaa tai poista kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
         <?php endif; ?>
     </div>
@@ -46,5 +46,3 @@
 <hr>
 <div class="row">
     <div class="col-md-7">
-    </a>
-</div>
