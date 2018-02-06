@@ -53,11 +53,11 @@
 <div class="row">
     <div class="col-md-7">
       <?php if (count($videos) > 0 ): ?>
-        <iframe style="float: left; width: 353px; height:198px; margin-right: 1%; margin-bottom: 0.5em;" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $videos[0]->name; ?>"></iframe>
-        <iframe style="float: left; width: 353px; height:199px; margin-right: 1%; margin-bottom: 0.5em;" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $videos[1]->name; ?>"></iframe>
+        <iframe style="float: left; width: 310px; height:198px; margin-right: 1%; margin-bottom: 0.5em;" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $videos[0]->name; ?>"></iframe>
+        <iframe style="float: left; width: 310px; height:199px; margin-right: 1%; margin-bottom: 0.5em;" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $videos[1]->name; ?>"></iframe>
       <?php else: ?>
-        <img src="http://via.placeholder.com/300x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-        <img src="http://via.placeholder.com/300x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
       <?php endif; ?>
   </div>
     <div class="col-md-5">

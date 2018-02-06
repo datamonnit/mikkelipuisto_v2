@@ -8,10 +8,10 @@
           <h1 class="text-center">Lisää uusi video kategoria</h1>
           <?php echo form_open('Video_Category/do_upload');?>
             <div class="form-group">
-              <input type="text" name="name" class="form-control" placeholder="Nimi" required autofocus><br>
+              <input type="text" name="name" class="form-control" placeholder="Kategorian nimi" required autofocus><br>
             </div>
             <div class="form-group">
-              <input type="text" name="text" class="form-control" placeholder="Kuvaus" required autofocus><br>
+              <input type="text" name="text" class="form-control" placeholder="Kategorian kuvaus" required autofocus><br>
             </div>
             <button type="submit" value="value" class="btn btn-primary btn-block">Seuraava</button>
         </div>
