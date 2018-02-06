@@ -2,10 +2,6 @@
     <div class="col-lg-12">
         <h1 class="page-header"><b>MEDIA</b>
               <small><b>Kuvat ja videot Mikkelipuistosta eri aiheittain.</b></small>
-              <?php if($this->session->userdata('logged_in')) : ?>
-                      <a class="btn btn-success" href="category/lisaakategoria/">Lisää uusi kategoria<span class="glyphicon glyphicon-chevron-right"></span></a>
-                      <a class="btn btn-success" href="media/lisaakuva/">Lataa kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
-              <?php endif; ?>
               <hr>
         </h1>
     </div>
@@ -49,7 +45,7 @@
 
 <h2>VIDEOT
   <?php if($this->session->userdata('logged_in')) : ?>
-          <a class="btn btn-success" href="media/lisaavideokategoria/">Lisää uusi kategoria<span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a class="btn btn-success" href="video_category/lisaavideokategoria/">Lisää uusi kategoria<span class="glyphicon glyphicon-chevron-right"></span></a>
           <a class="btn btn-success" href="media/lisaavideo/">Lisää videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
   <?php endif; ?></h2>
 <hr>
@@ -57,16 +53,16 @@
 <div class="row">
     <div class="col-md-7">
       <?php if (count($videos) > 0 ): ?>
-        <iframe style="float: left; width: 319px; height:218px; margin-right: 1%; margin-bottom: 0.5em;" src="https://www.youtube.com/embed/lTZlHhvU3U8"></iframe>
-        <iframe style="float: left; width: 319px; height:218px; margin-right: 1%; margin-bottom: 0.5em;" src="https://www.youtube.com/embed/IgO9rGlAAzc"></iframe>
+        <iframe style="float: left; width: 353px; height:198px; margin-right: 1%; margin-bottom: 0.5em;" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $videos[0]->name; ?>"></iframe>
+        <iframe style="float: left; width: 353px; height:199px; margin-right: 1%; margin-bottom: 0.5em;" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $videos[1]->name; ?>"></iframe>
       <?php else: ?>
-        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+        <img src="http://via.placeholder.com/300x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+        <img src="http://via.placeholder.com/300x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
       <?php endif; ?>
-    </div>
+  </div>
     <div class="col-md-5">
              <?php if($this->session->userdata('logged_in')) : ?>
-               <?php echo form_open('category/delete_video_cat/'.$video_category->id); ?>
+               <?php echo form_open('video_category/delete_video_cat/'.$video_category->id); ?>
                 <input type="submit" value="Poista kategoria" class="btn btn-danger" onclick="return confirm('Haluatko varmasti poistaa kategorian?')">
         </form>
         <?php endif; ?>

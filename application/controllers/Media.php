@@ -6,7 +6,7 @@
       $data['categories'] = $this->Category_model->get_categories();
       $data['images'] = $this->Category_model->get_category_intro_images();
       $data['video_categories'] = $this->Video_Category_model->get_video_categories();
-
+      $data['videos'] = $this->Video_Category_model->get_category_intro_videos();
 
       $this->load->view('templates/header');
       $this->load->view('media/view',$data);
@@ -19,6 +19,15 @@
 
       $this->load->view('templates/header');
       $this->load->view('media/lisaakuva',$data);
+      $this->load->view('templates/footer');
+    }
+
+    public function lisaavideo() {
+      $data['title'] = 'Lisaa video';
+      $data['video_categories'] = $this->Video_Category_model->get_video_categories();
+
+      $this->load->view('templates/header');
+      $this->load->view('media/lisaavideo',$data);
       $this->load->view('templates/footer');
     }
 

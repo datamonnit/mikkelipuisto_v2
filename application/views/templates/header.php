@@ -73,3 +73,6 @@
     <?php if($this->session->flashdata('category_deleted')): ?>
       <?php echo '<p class="alert alert-success">'.$this->session->flashdata('category_deleted').'</p>'; ?>
     <?php endif; ?>
+    <?php if($this->session->flashdata('video_category_deleted')): ?>
+      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('video_category_deleted').'</p>'; ?>
+    <?php endif; ?>

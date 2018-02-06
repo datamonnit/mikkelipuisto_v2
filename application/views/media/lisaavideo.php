@@ -5,7 +5,8 @@
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
           <div class="form-group">
-          <h1 class="text-center">Lisää videoita</h1>
+          <h1 class="text-center">Lisää video</h1>
+             <?php echo form_open('Video_Category/do_video_upload');?>
             <br>
 
           </div>
@@ -19,7 +20,7 @@
         <div>
       <br>
           <div class="form-group">
-            <input type="text" name="text" class="form-control" placeholder="Lisää videon Youtube-linkki" required autofocus>
+            <input type="text" name="linkki" class="form-control" placeholder="Lisää videon Youtube-linkki" required autofocus>
           </div>
           <button type="submit" value="value" class="btn btn-primary btn-block">Seuraava</button>
         </div>
