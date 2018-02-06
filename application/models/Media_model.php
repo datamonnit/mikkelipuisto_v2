@@ -51,4 +51,16 @@ class Media_model extends CI_Model {
     return $this->db->update('images');
 
   }
+
+  public function get_videos(){
+    $query = $this->db->get('videos');
+    return $query->result();
+  }
+
+  public function delete_video($id) {
+   $this->db->where('id', $id);
+   $this->db->delete('videos');
+   return true;
+ }
+
 }

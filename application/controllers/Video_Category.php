@@ -84,7 +84,7 @@ class Video_Category extends CI_Controller {
           );
 
           // Eri modeli ja metodi tähän
-          $new_category_id = $this->Video_Category_model->add_video_category($data);
+          $new_category_id = $this->Video_Category_model->create_video_category($data);
 
           redirect(base_url().'media');
 
