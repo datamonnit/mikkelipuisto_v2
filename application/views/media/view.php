@@ -33,7 +33,7 @@
         <?php endif; ?>
           <h4><?php echo $category->name; ?></h4>
           <p><?php echo $category->text; ?></p>
-          <a class="btn btn-primary" href="category/category/<?php echo $category->id; ?>">Katso lisää<span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a class="btn btn-primary" href="category/category/<?php echo $category->id; ?>">Katso kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
           <br></br>
         <?php if($this->session->userdata('logged_in')) : ?>
           <a class="btn btn-warning" href="media/poistajamuokkaa/<?php echo $category->id; ?>">Muokkaa tai poista kuvia<span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -49,16 +49,15 @@
           <a class="btn btn-success" href="media/lisaavideo/">Lisää videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
   <?php endif; ?></h2>
 <hr>
+
 <?php foreach ($video_categories as $video_category): ?>
 <div class="row">
     <div class="col-md-7">
-      <?php if (count($videos) > 0 ): ?>
-        <iframe style="float: left; width: 310px; height:198px; margin-right: 1%; margin-bottom: 0.5em;" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $videos[0]->name; ?>"></iframe>
-        <iframe style="float: left; width: 310px; height:199px; margin-right: 1%; margin-bottom: 0.5em;" src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $videos[1]->name; ?>"></iframe>
-      <?php else: ?>
-        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-      <?php endif; ?>
+             <?php foreach ($videos as $video): ?>
+              <?php if (count($videos) > 0 ): ?>
+           <img src="https://img.youtube.com/vi/<?php echo $video->url; ?>/0.jpg" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+                   <?php endif; ?>
+                 <?php endforeach; ?>
   </div>
     <div class="col-md-5">
              <?php if($this->session->userdata('logged_in')) : ?>
@@ -68,10 +67,10 @@
         <?php endif; ?>
             <h4><?php echo $video_category->name; ?></h4>
             <p><?php echo $video_category->text; ?></p>
-            <a class="btn btn-primary" href="category/category/<?php echo $video_category->id; ?>">Katso lisää<span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="btn btn-primary" href="media/videot/<?php echo $video_category->id; ?>">Katso videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
           <br></br>
         <?php if($this->session->userdata('logged_in')) : ?>
-          <a class="btn btn-warning" href="media/poistajamuokkaa/<?php echo $video_category->id; ?>">Muokkaa tai poista videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a class="btn btn-warning" href="media/poistajamuokkaavideoita/<?php echo $video_category->id; ?>">Muokkaa tai poista videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
         <?php endif; ?>
     </div>
 </div>

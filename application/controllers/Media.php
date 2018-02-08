@@ -31,6 +31,24 @@
       $this->load->view('templates/footer');
     }
 
+    public function videot($video_id) {
+      $data['title'] = 'Videoita';
+      $data['videos'] = $this->Media_model->get_videos($video_id);
+
+      $this->load->view('templates/header');
+      $this->load->view('media/videot',$data);
+      $this->load->view('templates/footer');
+    }
+
+    public function poistajamuokkaavideoita($video_id) {
+      $data['title'] = 'Poista ja muokkaa videoita';
+      $data['videos'] = $this->Media_model->get_videos($video_id);
+
+      $this->load->view('templates/header');
+      $this->load->view('media/poistajamuokkaavideoita',$data);
+      $this->load->view('templates/footer');
+    }
+
     public function poistajamuokkaa($category_id) {
       $data['title'] = 'Poista ja muokkaa';
       $data['images'] = $this->Category_model->get_images($category_id);
@@ -50,6 +68,19 @@
     $this->session->set_flashdata('image_deleted', 'Kuva on poistettu');
 
     redirect('media');
+
+    }
+
+    public function delete_video($video_id) {
+
+      if (!$this->session->userdata('logged_in')) {
+        redirect('users/login');
+      }
+
+      $this->Media_model->delete_video($video_id);
+      $this->session->set_flashdata('video_deleted', 'Video on poistettu');
+
+      redirect('media');
 
     }
 
