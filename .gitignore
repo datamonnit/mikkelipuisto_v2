@@ -1,3 +1,7 @@
+uploads/images/*
+uploads/thumbnails/*
+
+
 .DS_Store
 
 application/cache/*
