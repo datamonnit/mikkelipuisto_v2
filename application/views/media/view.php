@@ -53,18 +53,20 @@
 <?php foreach ($video_categories as $video_category): ?>
 <div class="row">
     <div class="col-md-7">
-             <?php foreach ($videos as $video): ?>
-              <?php if (count($videos) > 0 ): ?>
-           <img src="https://img.youtube.com/vi/<?php echo $video->url; ?>/0.jpg" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-                   <?php endif; ?>
-                 <?php endforeach; ?>
+            <?php if (count($videos) > 1 ): ?>
+              <img src="https://img.youtube.com/vi/<?php echo $videos[0]->url; ?>/0.jpg" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+              <img src="https://img.youtube.com/vi/<?php echo $videos[1]->url; ?>/0.jpg" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+         <?php else: ?>
+           <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+           <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+         <?php endif; ?>
   </div>
     <div class="col-md-5">
              <?php if($this->session->userdata('logged_in')) : ?>
                <?php echo form_open('video_category/delete_video_cat/'.$video_category->id); ?>
                 <input type="submit" value="Poista kategoria" class="btn btn-danger" onclick="return confirm('Haluatko varmasti poistaa kategorian?')">
         </form>
-        <?php endif; ?>
+                <?php endif; ?>
             <h4><?php echo $video_category->name; ?></h4>
             <p><?php echo $video_category->text; ?></p>
             <a class="btn btn-primary" href="media/videot/<?php echo $video_category->id; ?>">Katso videoita<span class="glyphicon glyphicon-chevron-right"></span></a>

@@ -6,7 +6,7 @@
     </div>
     <?php foreach ($videos as $video): ?>
     <div class="mySlides">
-      <iframe width=100% height=60% src="https://www.youtube.com/embed/K9u8zFVjX1g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe style="width: 100%; height: 60%" src='https://www.youtube.com/embed/<?php echo $video->url; ?>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
     <?php endforeach; ?>
 
