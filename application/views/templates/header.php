@@ -76,3 +76,9 @@
     <?php if($this->session->flashdata('video_category_deleted')): ?>
       <?php echo '<p class="alert alert-success">'.$this->session->flashdata('video_category_deleted').'</p>'; ?>
     <?php endif; ?>
+    <?php if($this->session->flashdata('video_category_created')): ?>
+      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('video_category_created').'</p>'; ?>
+    <?php endif; ?>
+    <?php if($this->session->flashdata('video_added')): ?>
+      <?php echo '<p class="alert alert-success">'.$this->session->flashdata('video_added').'</p>'; ?>
+    <?php endif; ?>

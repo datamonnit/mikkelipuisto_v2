@@ -52,7 +52,9 @@ class Media_model extends CI_Model {
 
   }
 
-  public function get_videos(){
+  public function get_videos($video_categories_id){
+    $this->db->select('id, url, text');
+    $this->db->where('video_categories_id', $video_categories_id);
     $query = $this->db->get('videos');
     return $query->result();
   }

@@ -55,7 +55,6 @@ class Video_Category extends CI_Controller {
     } else {
       $this->Video_Category_model->create_video_category();
 
-      $this->session->set_flashdata('category_created', 'Uusi kategoria on luotu');
       redirect('media');
     }
   }
@@ -85,6 +84,7 @@ class Video_Category extends CI_Controller {
 
           // Eri modeli ja metodi tähän
           $new_category_id = $this->Video_Category_model->create_video_category($data);
+          $this->session->set_flashdata('video_category_created', 'Uusi videon kategoria lisätty');
 
           redirect(base_url().'media');
 
@@ -112,6 +112,7 @@ class Video_Category extends CI_Controller {
 
              // Eri modeli ja metodi tähän
              $new_video_category_id = $this->Video_Category_model->add_video($data);
+             $this->session->set_flashdata('video_added', 'Video on lisätty');
 
              redirect(base_url().'media');
 

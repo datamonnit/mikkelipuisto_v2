@@ -17,13 +17,17 @@
 <?php foreach ($categories as $category): ?>
 <div class="row">
     <div class="col-md-7">
-      <?php if (count($images) > 0 ): ?>
-            <img src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $images[0]->name; ?>" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-            <img src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $images[1]->name; ?>" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-      <?php else: ?>
-        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-        <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-      <?php endif; ?>
+      <?php $laskuri = 0; ?>
+      <?php foreach ($images as $image): ?>
+        <?php
+          if ($category->id == $image->category_id) {
+            if ($laskuri < 2) {
+              ?><img src="<?php echo base_url(); ?>uploads/thumbnails/<?php echo $image->name; ?>" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"><?php
+              $laskuri++;
+            }
+          }
+        ?>
+      <?php endforeach; ?>
     </div>
     <div class="col-md-5">
        <?php if($this->session->userdata('logged_in')) : ?>
@@ -53,14 +57,18 @@
 <?php foreach ($video_categories as $video_category): ?>
 <div class="row">
     <div class="col-md-7">
-            <?php if (count($videos) > 1 ): ?>
-              <img src="https://img.youtube.com/vi/<?php echo $videos[0]->url; ?>/0.jpg" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-              <img src="https://img.youtube.com/vi/<?php echo $videos[1]->url; ?>/0.jpg" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-         <?php else: ?>
-           <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-           <img src="http://via.placeholder.com/353x198" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-         <?php endif; ?>
-  </div>
+        <?php $laskuri = 0; ?>
+        <?php foreach ($videos as $video): ?>
+          <?php
+            if ($video_category->id == $video->video_categories_id) {
+              if ($laskuri < 2) {
+                ?><img src="https://img.youtube.com/vi/<?php echo $video->url; ?>/0.jpg" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;"><?php
+                $laskuri++;
+              }
+            }
+          ?>
+        <?php endforeach; ?>
+    </div>
     <div class="col-md-5">
              <?php if($this->session->userdata('logged_in')) : ?>
                <?php echo form_open('video_category/delete_video_cat/'.$video_category->id); ?>
@@ -72,9 +80,10 @@
             <a class="btn btn-primary" href="media/videot/<?php echo $video_category->id; ?>">Katso videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
           <br></br>
         <?php if($this->session->userdata('logged_in')) : ?>
-          <a class="btn btn-warning" href="media/poistajamuokkaavideoita/<?php echo $video_category->id; ?>">Muokkaa tai poista videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
+          <a class="btn btn-warning" href="media/poistajamuokkaavideoita/<?php echo $video_category->id; ?>">Poista videoita<span class="glyphicon glyphicon-chevron-right"></span></a>
         <?php endif; ?>
     </div>
 </div>
 <hr>
+
 <?php endforeach; ?>

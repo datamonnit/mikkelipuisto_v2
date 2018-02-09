@@ -31,9 +31,9 @@
       $this->load->view('templates/footer');
     }
 
-    public function videot($video_id) {
+    public function videot($video_categories_id) {
       $data['title'] = 'Videoita';
-      $data['videos'] = $this->Media_model->get_videos($video_id);
+      $data['videos'] = $this->Media_model->get_videos($video_categories_id);
 
       $this->load->view('templates/header');
       $this->load->view('media/videot',$data);

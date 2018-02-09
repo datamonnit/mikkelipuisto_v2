@@ -52,8 +52,6 @@ class Upload extends CI_Controller {
             $config['allowed_types']        = 'gif|jpg|png';
             $this->upload->initialize($config);
 
-            var_dump(UPLOADPATH);
-
             if ( ! $this->upload->do_upload('userfile'))
             {
               echo $this->upload->display_errors('<h2>', '</h2>');
@@ -93,7 +91,7 @@ class Upload extends CI_Controller {
         }
       }
 
-      // redirect(base_url().'media');
+      redirect(base_url().'media');
 
     }
   }

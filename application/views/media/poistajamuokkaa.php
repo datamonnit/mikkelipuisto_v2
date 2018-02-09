@@ -11,7 +11,7 @@
         <input type="hidden" id="image_id" name="image_id" value="<?php echo $image->id; ?>">
         <input type="submit" value="Poista" class="btn btn-danger" onclick="return confirm('Haluatko varmasti poistaa kuvan?')">
       </form>
-      <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width:100%">
+      <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width: 100%; height: 65%">
     </div>
     <?php endforeach; ?>
 
@@ -46,6 +46,7 @@ function callAjax(){
         dataType: 'json',
         data: {desc: kuvaus, id: image_id },
         success: function(result) {
+          alert('Muokkaus tallennettu');
           console.log(result);
       }
     });

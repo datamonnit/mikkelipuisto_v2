@@ -2,8 +2,8 @@
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="caption-container">
-      <p id="caption"></p>
     </div>
+    
     <?php foreach ($videos as $video): ?>
     <div class="mySlides">
       <iframe style="width: 100%; height: 60%" src='https://www.youtube.com/embed/<?php echo $video->url; ?>' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
