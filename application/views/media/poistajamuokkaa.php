@@ -11,7 +11,7 @@
         <input type="hidden" id="image_id" name="image_id" value="<?php echo $image->id; ?>">
         <input type="submit" value="Poista" class="btn btn-danger" onclick="return confirm('Haluatko varmasti poistaa kuvan?')">
       </form>
-      <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width: 100%; height: 65%">
+      <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width: 100%; height: 70%">
     </div>
     <?php endforeach; ?>
 

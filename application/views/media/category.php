@@ -6,7 +6,7 @@
     </div>
     <?php foreach ($images as $image): ?>
     <div class="mySlides">
-            <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width: 100%; height: 65%" >
+            <img src="<?php echo base_url(); ?>uploads/images/<?php echo $image->name; ?>" style="width: 100%; height: 70%" >
     </div>
     <?php endforeach; ?>
 
