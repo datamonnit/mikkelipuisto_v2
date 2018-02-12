@@ -74,7 +74,7 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     overflow: auto;
   }
 
@@ -162,6 +162,7 @@ body {
 
   img.demo {
     opacity: 0.6;
+    height: 100px;
   }
 
   .active,
