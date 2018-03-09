@@ -36,3 +36,26 @@ function showSlides(n) {
   captionText.dataset.id = dots[slideIndex-1].dataset.id;
   console.log(captionText.dataset.id);
 }
+
+function validateYouTubeUrl(myID)
+    {
+        var videoID = myID;
+
+        var request = new XMLHttpRequest();
+
+        request.open('GET', 'https://www.googleapis.com/youtube/v3/videos?id='+ videoID + '&key=KEY&part=snippet', true);
+
+        request.send();
+
+        if (request.status === 200) {
+        var response = JSON.Parse(request.responseText);
+            if (response.pageInfo.totalResults == 0) {
+                 return false;
+            } else {
+                 return true;
+            }
+        } else {
+            return false;
+        }
+        temp.pageInfo.totalResults
+    }

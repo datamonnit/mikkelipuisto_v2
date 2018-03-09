@@ -20,7 +20,7 @@
         <div>
       <br>
           <div class="form-group">
-            <input type="text" name="linkki" class="form-control" placeholder="Lisää videon Youtube-linkki" required autofocus>
+            <input id="video_id" type="text" name="linkki" class="form-control" placeholder="Lisää videon Youtube-linkki" onchange="teeJotainLinkille(this.value)" required autofocus>
           </div>
           <button type="submit" value="value" class="btn btn-primary btn-block">Seuraava</button>
         </div>
@@ -30,3 +30,12 @@
   <?php endif; ?>
   <br>
   <hr>
+  <script type="text/javascript">
+    function teeJotainLinkille(url){
+      var id = url.slice(url.length-11, url.length)
+      console.log(url);
+      console.log(id);
+      document.getElementById('video_id').value = id;
+    }
+
+  </script>

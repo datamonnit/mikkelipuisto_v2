@@ -45,7 +45,6 @@ class Media_model extends CI_Model {
 
   public function edit_image_description($data) {
 
-    // var_dump($data);
     $this->db->set('text', $data['desc']);
     $this->db->where('id', $data['id']);
     return $this->db->update('images');
