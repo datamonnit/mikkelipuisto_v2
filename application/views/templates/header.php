@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <script src="<?php echo base_url(); ?>assets/js/modernizr.custom.17475.js"></script>
-
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/elastislide.css" />
   </head>
   <body>

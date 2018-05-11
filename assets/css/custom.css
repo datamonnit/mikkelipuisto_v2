@@ -196,4 +196,8 @@ p {
   position: absolute;
   top: 40px;
   right: 10px;
+  }
+
+  #tiedot {
+  float: right;
 }

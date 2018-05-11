@@ -3,37 +3,50 @@
         <h1 class="page-header"><b>YHTEYSTIEDOT</b>
               <small><b>Mikkelipuistoon liittyvissä asioissa, ota yhteyttä:</b></small>
               <hr>
+
+              <?php if($this->session->userdata('logged_in')) : ?>
+                  <script src='<?php echo base_url(); ?>assets/tinymce/tinymce.min.js'></script>
+                    <script type="text/javascript">
+                    tinyMCE.init({
+                        selector: "#editable",
+                        inline: true,
+                        plugins: [
+                          'advlist autolink lists link image charmap print preview anchor',
+                          'searchreplace visualblocks code fullscreen',
+                          'insertdatetime media table contextmenu paste'
+                        ],
+                        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+                    });
+
+                          $(document).ready(function(){
+                            $( "#tiedot" ).click(function() {
+                              let divContent = $('#editable').html();
+
+                              $.ajax({
+                                  type: "POST",
+                                  url: "<?php echo base_url(); ?>pages/save_html",
+                                  dataType: 'json',
+                                  data: { html: divContent }
+                              })
+                              .done(function() {
+                                alert( "Valmis" );
+                              })
+                              .fail(function(xhr, status, error) {
+                                console.log(xhr);
+                                console.log(status);
+                                console.log(error);
+                              })
+                            });
+                          });
+
+                      </script>
+
+
         </h1>
+      <a id="tiedot" class="btn btn-success">Tallenna yhteystietojen muokkaus<span class="glyphicon glyphicon-chevron-right"></span></a>
+      <?php endif; ?>
     </div>
 </div>
-
-<h3 class="yt">Kirsi Olkkonen</h3>
-<h4>Toiminnanjohtaja</h4>
-<h4>0440 300 249</h4>
-<h4>kirsi.olkkonen@mikkelipuisto.fi</h4>
-<hr>
-
-<h3 class="yt">Reeta Vaha</h3>
-<h4>Ylipuutarhuri</h4>
-<h4>0440 300 217</h4>
-<h4>reeta.vaha@mikkelipuisto.fi</h4>
-<hr>
-
-<h3 class="yt">Puhelin puistoon</h3>
-<h4>(Kesäkaudella)</h4>
-<h4>0440 300 170</h4>
-<hr>
-
-<h3 class="yt">Posti- ja käyntiosoite</h3>
-<h4>Mikkelipuisto</h4>
-<h4>Pursialankatu 5</h4>
-<h4>50100 MIKKELI</h4>
-<h4>mikkelipuisto@mikkelipuisto.fi</h4>
-<hr>
-
-<h4>Mikkelipuiston yleisten alueiden hoidosta ja toiminnasta vastaa Mikkelin kaupunki.</h4>
-<h3 class="yt">Marko Vuorinen</h3>
-<h4>Kaupunginpuutarhuri</h4>
-<h4>044 794 3230</h4>
-<br>
-<hr>
+<div id="editable">
+  <?php $this->load->view('pages/yhteystiedotmuokkaus'); ?>
+</div>
